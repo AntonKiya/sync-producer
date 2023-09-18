@@ -8,7 +8,7 @@ import { getKafkaConnectionConfig } from './kafka.config';
 @Module({
   exports: [KafkaService],
   imports: [
-    ConfigModule,
+    ConfigModule.forRoot({ isGlobal: true }),
     ClientsModule.registerAsync([
       {
         inject: [ConfigService],
