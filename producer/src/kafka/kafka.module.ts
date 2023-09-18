@@ -12,11 +12,11 @@ import { getKafkaConnectionConfig } from './kafka.config';
       {
         inject: [ConfigService],
         name: 'KAFKA',
-        extraProviders: [ConfigService, ClientsModule],
+        extraProviders: [],
         useFactory: (config: ConfigService) => getKafkaConnectionConfig(config)
       }
     ])
   ],
-  providers: [KafkaService, ConfigService, ClientsModule]
+  providers: [KafkaService, ClientsModule]
 })
 export class KafkaBrokerModule {}
