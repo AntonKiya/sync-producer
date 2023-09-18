@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ClientsModule } from '@nestjs/microservices';
-import { ConfigService } from '@nestjs/config';
+import { ConfigModule, ConfigService } from "@nestjs/config";
 
 import { KafkaService } from './kafka.service';
 import { getKafkaConnectionConfig } from './kafka.config';
@@ -8,7 +8,7 @@ import { getKafkaConnectionConfig } from './kafka.config';
 @Module({
   exports: [KafkaService],
   imports: [
-    ConfigService,
+    ConfigModule,
     ClientsModule.registerAsync([
       {
         inject: [ConfigService],
