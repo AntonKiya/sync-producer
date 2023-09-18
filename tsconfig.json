@@ -1,0 +1,20 @@
+// Server typescript configuration
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "module": "commonjs",
+    "lib": ["DOM", "DOM.Iterable", "esnext"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2022",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "incremental": true,
+    "declaration": true,
+    "skipLibCheck": true
+  },
+  "include": ["./producer/src/**/*", "index.ts"],
+  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"],
+}
