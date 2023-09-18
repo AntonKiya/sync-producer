@@ -16,6 +16,6 @@ import { getKafkaConnectionConfig } from './kafka.config';
       }
     ])
   ],
-  providers: [KafkaService]
+  providers: [KafkaService, ConfigService]
 })
 export class KafkaBrokerModule {}
