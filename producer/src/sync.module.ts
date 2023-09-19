@@ -2,12 +2,12 @@ import { Module } from '@nestjs/common';
 
 import { KafkaBrokerModule } from './kafka/kafka.module';
 import { SyncService } from './sync.service';
-import { ConfigModule } from "@nestjs/config";
+import { ConfigModule, ConfigService } from "@nestjs/config";
 
 @Module({
   controllers: [],
   exports: [SyncService],
   imports: [ConfigModule.forRoot({ isGlobal: true }), KafkaBrokerModule],
-  providers: [SyncService]
+  providers: [SyncService, ConfigService]
 })
 export class SyncModule {}
